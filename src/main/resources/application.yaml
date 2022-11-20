@@ -1,0 +1,21 @@
+# The value is password but it should be secret ! We need to set this env variable before launching the app !
+secret:
+  password: ${PASSWORD:password}
+
+server:
+  port: ${APP_PORT:8070}
+  servlet:
+    context-path: /membership/api
+
+
+management:
+  health:
+    show-details: always
+  metrics:
+    enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: info, health, metrics
+        
+       
